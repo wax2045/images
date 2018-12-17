@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,shrink-to-fit=no"/>
+
+  <title>地铁图</title>
+</head>
+<body>
+<div id="mysubway"></div>
+<script src="https://webapi.amap.com/subway?v=1.0&amp;key=576635bce1e0382768ced2bc4417e8de&amp;callback=cbk"></script>
+<script type="text/javascript">
+  window.cbk = function(){
+
+    var mysubway = subway("mysubway", {
+      easy: 1,
+      adcode:SubviewDetailViewController.adcode(),
+    });
+
+
+    mysubway.getCityList(function (list) {
+      console.log(list);
+    });
+  };
+</script>
+</body>
+</html>
